@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class TestRunner</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class TestRunner</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; TestRunner</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">10</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">14.867s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Authorized user can  able to fetch status of virtual account</td>
+<td class="success">0.656s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can  able to update date</td>
+<td class="success">0.627s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can able to do payment</td>
+<td class="success">0.611s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can create virtual account post request</td>
+<td class="success">0.683s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can not able to create virtual account without mandatory Field #1</td>
+<td class="success">2.311s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can not able to create virtual account without mandatory Field #2</td>
+<td class="success">0.562s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can not able to create virtual account without mandatory Field #3</td>
+<td class="success">0.622s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user can not able update date with invalid date</td>
+<td class="success">0.621s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Authorized user check date update data</td>
+<td class="success">0.609s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Check login is successful with valid credentials</td>
+<td class="success">7.565s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@smoke
+Scenario Outline: Authorized user can not able to create virtual account without mandatory Field # src/test/resources/featureFiles/CreateVA.feature:13
+  Given create virtual account post api '/callback_virtual_accounts'                             # StepDefinations.CreateVASteps.create_virtual_account_post_api(java.lang.String)
+  And as request body provided 'va_fixed-123' '' 'tasnim'                                        # StepDefinations.CreateVASteps.as_request_body_provided(java.lang.String,java.lang.String,java.lang.String)
+https://api.xendit.co/callback_virtual_accounts
+{Content-Type=application/json;charset=UTF-8}
+{&quot;error_code&quot;:&quot;API_VALIDATION_ERROR&quot;,&quot;message&quot;:&quot;There was an error with the format submitted to the server.&quot;,&quot;errors&quot;:[{&quot;field&quot;:&quot;bank_code&quot;,&quot;location&quot;:&quot;body&quot;,&quot;messages&quot;:[&quot;\&quot;bank_code\&quot; is not allowed to be empty&quot;],&quot;types&quot;:[&quot;any.empty&quot;]}]}
+  When user  calls post api with body                                                            # StepDefinations.CreateVASteps.user_calls_post_api_with_body()
+  Then can not create a virtual account successfully                                             # StepDefinations.CreateVASteps.can_not_create_a_virtual_account_successfully()
+
+@smoke
+Scenario Outline: Authorized user can not able to create virtual account without mandatory Field # src/test/resources/featureFiles/CreateVA.feature:14
+  Given create virtual account post api '/callback_virtual_accounts'                             # StepDefinations.CreateVASteps.create_virtual_account_post_api(java.lang.String)
+  And as request body provided 'va_fixed-123' 'MANDIRI' ''                                       # StepDefinations.CreateVASteps.as_request_body_provided(java.lang.String,java.lang.String,java.lang.String)
+https://api.xendit.co/callback_virtual_accounts
+{Content-Type=application/json;charset=UTF-8}
+{&quot;error_code&quot;:&quot;API_VALIDATION_ERROR&quot;,&quot;message&quot;:&quot;There was an error with the format submitted to the server.&quot;,&quot;errors&quot;:[{&quot;field&quot;:&quot;name&quot;,&quot;location&quot;:&quot;body&quot;,&quot;messages&quot;:[&quot;\&quot;name\&quot; is not allowed to be empty&quot;,&quot;\&quot;name\&quot; with value \&quot;\&quot; fails to match the required pattern: /^[a-zA-Z ]+$/&quot;],&quot;types&quot;:[&quot;any.empty&quot;,&quot;string.regex.base&quot;]}]}
+  When user  calls post api with body                                                            # StepDefinations.CreateVASteps.user_calls_post_api_with_body()
+  Then can not create a virtual account successfully                                             # StepDefinations.CreateVASteps.can_not_create_a_virtual_account_successfully()
+
+@smoke
+Scenario Outline: Authorized user can not able to create virtual account without mandatory Field # src/test/resources/featureFiles/CreateVA.feature:15
+  Given create virtual account post api '/callback_virtual_accounts'                             # StepDefinations.CreateVASteps.create_virtual_account_post_api(java.lang.String)
+  And as request body provided '' 'MANDIRI' 'tasnim'                                             # StepDefinations.CreateVASteps.as_request_body_provided(java.lang.String,java.lang.String,java.lang.String)
+https://api.xendit.co/callback_virtual_accounts
+{Content-Type=application/json;charset=UTF-8}
+{&quot;error_code&quot;:&quot;API_VALIDATION_ERROR&quot;,&quot;message&quot;:&quot;There was an error with the format submitted to the server.&quot;,&quot;errors&quot;:[{&quot;field&quot;:&quot;external_id&quot;,&quot;location&quot;:&quot;body&quot;,&quot;messages&quot;:[&quot;\&quot;external_id\&quot; is not allowed to be empty&quot;],&quot;types&quot;:[&quot;any.empty&quot;]}]}
+  When user  calls post api with body                                                            # StepDefinations.CreateVASteps.user_calls_post_api_with_body()
+  Then can not create a virtual account successfully                                             # StepDefinations.CreateVASteps.can_not_create_a_virtual_account_successfully()
+
+@smoke
+Scenario Outline: Authorized user can create virtual account post request # src/test/resources/featureFiles/CreateVA.feature:27
+  Given create virtual account post api '/callback_virtual_accounts'      # StepDefinations.CreateVASteps.create_virtual_account_post_api(java.lang.String)
+  And as request body provided 'va_fixed-124' 'MANDIRI' 'tasnim'          # StepDefinations.CreateVASteps.as_request_body_provided(java.lang.String,java.lang.String,java.lang.String)
+https://api.xendit.co/callback_virtual_accounts
+{Content-Type=application/json;charset=UTF-8}
+{&quot;is_closed&quot;:false,&quot;status&quot;:&quot;PENDING&quot;,&quot;owner_id&quot;:&quot;599bd7f1ccab55b020bb1147&quot;,&quot;external_id&quot;:&quot;va_fixed-124&quot;,&quot;bank_code&quot;:&quot;MANDIRI&quot;,&quot;merchant_code&quot;:&quot;88608&quot;,&quot;name&quot;:&quot;tasnim&quot;,&quot;account_number&quot;:&quot;886088018933148&quot;,&quot;is_single_use&quot;:false,&quot;expiration_date&quot;:&quot;2053-09-08T17:00:00.000Z&quot;,&quot;id&quot;:&quot;631afd962720a777ec27c4f2&quot;}
+  When user  calls post api with body                                     # StepDefinations.CreateVASteps.user_calls_post_api_with_body()
+test
+Successfully wrote to the file.
+Successfully wrote to the file.
+{&quot;is_closed&quot;:false,&quot;status&quot;:&quot;PENDING&quot;,&quot;owner_id&quot;:&quot;599bd7f1ccab55b020bb1147&quot;,&quot;external_id&quot;:&quot;va_fixed-124&quot;,&quot;bank_code&quot;:&quot;MANDIRI&quot;,&quot;merchant_code&quot;:&quot;88608&quot;,&quot;name&quot;:&quot;tasnim&quot;,&quot;account_number&quot;:&quot;886088018933148&quot;,&quot;is_single_use&quot;:false,&quot;expiration_date&quot;:&quot;2053-09-08T17:00:00.000Z&quot;,&quot;id&quot;:&quot;631afd962720a777ec27c4f2&quot;}
+  Then create a virtual account successfully                              # StepDefinations.CreateVASteps.create_virtual_account_post_api()
+
+@smoke
+Scenario Outline: Authorized user can  able to fetch status of virtual account # src/test/resources/featureFiles/InquiryCVA.feature:10
+  Given fetch status api '/callback_virtual_accounts/'                         # StepDefinations.InquiryCSVSteps.fetchStatusApiPath(java.lang.String)
+631afd962720a777ec27c4f2
+  And as a prams provided id                                                   # StepDefinations.InquiryCSVSteps.asAPramsProvidedId()
+Control here in api call
+http://localhosthttps://api.xendit.co/callback_virtual_accounts/631afd962720a777ec27c4f2
+{&quot;is_closed&quot;:false,&quot;status&quot;:&quot;ACTIVE&quot;,&quot;owner_id&quot;:&quot;599bd7f1ccab55b020bb1147&quot;,&quot;external_id&quot;:&quot;va_fixed-124&quot;,&quot;bank_code&quot;:&quot;MANDIRI&quot;,&quot;merchant_code&quot;:&quot;88608&quot;,&quot;name&quot;:&quot;tasnim&quot;,&quot;account_number&quot;:&quot;886088018933148&quot;,&quot;is_single_use&quot;:false,&quot;expiration_date&quot;:&quot;2053-09-08T17:00:00.000Z&quot;,&quot;id&quot;:&quot;631afd962720a777ec27c4f2&quot;}
+  When user calls the get api                                                  # StepDefinations.InquiryCSVSteps.userCallsTheGetApi()
+886088018933148
+  Then will find success status '200'                                          # StepDefinations.InquiryCSVSteps.willFindSuccessStatusCode(java.lang.String)
+
+@smoke
+Scenario Outline: Authorized user can not able update date with invalid date # src/test/resources/featureFiles/UpdateDate.feature:10
+631afd962720a777ec27c4f2
+  Given update date api patch '/callback_virtual_accounts/'                  # StepDefinations.UpdateDateSteps.updateDateApiPatchPath(java.lang.String)
+  And as a body provided update date '2053-11testGoingOn-27T07:00:00.000Z'   # StepDefinations.UpdateDateSteps.asABodyProvidedUpdateDateDate(java.lang.String)
+http://localhosthttps://api.xendit.co/callback_virtual_accounts/631afd962720a777ec27c4f2
+{Content-Type=application/json;charset=UTF-8}
+{&quot;error_code&quot;:&quot;API_VALIDATION_ERROR&quot;,&quot;message&quot;:&quot;There was an error with the format submitted to the server.&quot;,&quot;errors&quot;:[{&quot;field&quot;:&quot;expiration_date&quot;,&quot;location&quot;:&quot;body&quot;,&quot;messages&quot;:[&quot;\&quot;expiration_date\&quot; must be a valid ISO 8601 date&quot;],&quot;types&quot;:[&quot;date.isoDate&quot;]}]}
+  When user  calls patch api with body                                       # StepDefinations.UpdateDateSteps.userCallsPatchApiWithBody()
+  Then response would be validation error                                    # StepDefinations.UpdateDateSteps.responseWouldBeValidationError()
+
+@smoke
+Scenario Outline: Authorized user can  able to update date      # src/test/resources/featureFiles/UpdateDate.feature:20
+631afd962720a777ec27c4f2
+  Given update date api patch '/callback_virtual_accounts/'     # StepDefinations.UpdateDateSteps.updateDateApiPatchPath(java.lang.String)
+  And as a body provided update date '2053-11-27T07:00:00.000Z' # StepDefinations.UpdateDateSteps.asABodyProvidedUpdateDateDate(java.lang.String)
+http://localhosthttps://api.xendit.co/callback_virtual_accounts/631afd962720a777ec27c4f2
+{Content-Type=application/json;charset=UTF-8}
+{&quot;is_closed&quot;:false,&quot;status&quot;:&quot;PENDING&quot;,&quot;owner_id&quot;:&quot;599bd7f1ccab55b020bb1147&quot;,&quot;external_id&quot;:&quot;va_fixed-124&quot;,&quot;bank_code&quot;:&quot;MANDIRI&quot;,&quot;merchant_code&quot;:&quot;88608&quot;,&quot;name&quot;:&quot;tasnim&quot;,&quot;account_number&quot;:&quot;886088018933148&quot;,&quot;is_single_use&quot;:false,&quot;expiration_date&quot;:&quot;2053-11-27T07:00:00.000Z&quot;,&quot;id&quot;:&quot;631afd962720a777ec27c4f2&quot;}
+  When user  calls patch api with body                          # StepDefinations.UpdateDateSteps.userCallsPatchApiWithBody()
+Successfully wrote to the file.
+  Then date update sucessfully                                  # StepDefinations.UpdateDateSteps.dateUpdateSucessfully()
+
+@smoke
+Scenario Outline: Authorized user check date update data # src/test/resources/featureFiles/UpdateDate.feature:30
+  Given fetch status api '/callback_virtual_accounts/'   # StepDefinations.InquiryCSVSteps.fetchStatusApiPath(java.lang.String)
+631afd962720a777ec27c4f2
+  And as a prams provided id                             # StepDefinations.InquiryCSVSteps.asAPramsProvidedId()
+Control here in api call
+http://localhosthttps://api.xendit.co/callback_virtual_accounts/631afd962720a777ec27c4f2
+{&quot;is_closed&quot;:false,&quot;status&quot;:&quot;ACTIVE&quot;,&quot;owner_id&quot;:&quot;599bd7f1ccab55b020bb1147&quot;,&quot;external_id&quot;:&quot;va_fixed-124&quot;,&quot;bank_code&quot;:&quot;MANDIRI&quot;,&quot;merchant_code&quot;:&quot;88608&quot;,&quot;name&quot;:&quot;tasnim&quot;,&quot;account_number&quot;:&quot;886088018933148&quot;,&quot;is_single_use&quot;:false,&quot;expiration_date&quot;:&quot;2053-11-27T07:00:00.000Z&quot;,&quot;id&quot;:&quot;631afd962720a777ec27c4f2&quot;}
+  When user calls the get api                            # StepDefinations.InquiryCSVSteps.userCallsTheGetApi()
+2053-11-27T07:00:00.000Z
+  Then valid provided date with updateDate               # StepDefinations.InquiryCSVSteps.validProvidedDateWithUpdateDate()
+
+@smoke
+Scenario Outline: Authorized user can able to do payment # src/test/resources/featureFiles/xPaymentVA.feature:10
+va_fixed-124
+  Given payment post  api '/callback_virtual_accounts/'  # StepDefinations.PaymentVASteps.paymentPostApiPath(java.lang.String)
+payment5007
+{&quot;amount&quot;:5007}
+  And as request body amount will be provided '5007'     # StepDefinations.PaymentVASteps.asRequestBodyAmountWillBeProvidedAmount(java.lang.String)
+https://api.xendit.co/callback_virtual_accounts/external_id=va_fixed-124/simulate_payment
+{Content-Type=application/json;charset=UTF-8}
+{&quot;status&quot;:&quot;COMPLETED&quot;,&quot;message&quot;:&quot;Payment for the Fixed VA with external id va_fixed-124 is currently being processed. Please ensure that you have set a callback URL for VA payments via Dashboard Settings and contact us if you do not receive a VA payment callback within the next 5 mins.&quot;}
+  When user calls the post api with body                 # StepDefinations.PaymentVASteps.userCallsThePostApiWithBody()
+testttttttttttttttt
+  Then payment will be succesfull                        # StepDefinations.PaymentVASteps.paymentWillBeSuccesfull()
+
+@smoke
+Scenario Outline: Check login is successful with valid credentials     # src/test/resources/featureFiles/yLogin.feature:11
+  Given user is on login page                                          # WebStepDefinations.LoginSteps.userIsOnLoginPage()
+  When user enters 'tasnim-hosen-60558577003@xendit.co' and 'T@snim91' # WebStepDefinations.LoginSteps.userEntersUsernameAndPassword(java.lang.String,java.lang.String)
+  And clicks on login button                                           # WebStepDefinations.LoginSteps.clicksOnLoginButton()
+Xendit Dashboard
+  Then user is nvaigated to home pages                                 # WebStepDefinations.LoginSteps.userIsNvaigatedToHomePages()
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 105.0.5195.52 (412c95e518836d8a7d97250d62b29c2ae6a26a85-refs/branch-heads/5195@{#853}) on port 53260
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Sep 09, 2022 1:47:23 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+Sep 09, 2022 1:47:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 105, so returning the closest version found: a no-op implementation
+Sep 09, 2022 1:47:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Unable to find CDP implementation matching 105.
+Sep 09, 2022 1:47:23 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$3
+WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.1.2` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+?????????????????????????????????????????????????????????????????????????????????????
+? Share your Cucumber Report with your team at https://reports.cucumber.io          ?
+? Activate publishing with one of the following:                                    ?
+?                                                                                   ?
+? src/test/resources/cucumber.properties:          cucumber.publish.enabled=true    ?
+? src/test/resources/junit-platform.properties:    cucumber.publish.enabled=true    ?
+? Environment variable:                            CUCUMBER_PUBLISH_ENABLED=true    ?
+? JUnit:                                           @CucumberOptions(publish = true) ?
+?                                                                                   ?
+? More information at https://cucumber.io/docs/cucumber/environment-variables/      ?
+?                                                                                   ?
+? Disable this message with one of the following:                                   ?
+?                                                                                   ?
+? src/test/resources/cucumber.properties:          cucumber.publish.quiet=true      ?
+? src/test/resources/junit-platform.properties:    cucumber.publish.quiet=true      ?
+?????????????????????????????????????????????????????????????????????????????????????
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at Sep 9, 2022 1:47:29 AM</p>
+</div>
+</div>
+</body>
+</html>
