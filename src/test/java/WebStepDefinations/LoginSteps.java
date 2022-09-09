@@ -19,6 +19,10 @@ public class LoginSteps {
     public void userIsOnLoginPage() {
         ChromeOptions chromeOptions = new ChromeOptions();
         WebDriverManager.chromedriver().setup();
+
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--headless");
         driver = new ChromeDriver(chromeOptions);
         loginPage = new LoginPage(driver);
         driver.navigate().to("https://dashboard.xendit.co/login");
