@@ -35,7 +35,7 @@ jobs:
           Hi,
           Please find attached the automated test report.
         from: Github Actions
-        to: tasnim@techureka.com
+        to: tasnim@techeureka.com
         content_type: text/html
           # Optional converting Markdown to HTML (set content_type to text/html too):
         convert_markdown: true
