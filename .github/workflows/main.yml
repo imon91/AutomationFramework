@@ -31,6 +31,6 @@ jobs:
         body: |
           Hi,
           Please find attached the automated test report.
-        from: Automated Tests <${{ secrets.EMAIL_USERNAME }}>
+        from: Automated Tests
         to: tasnim@techureka.com
        
