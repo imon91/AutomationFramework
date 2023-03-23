@@ -21,7 +21,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew test --info # Run our tests using Gradle
     - name: Send email report
-      uses: dawidd6/action-send-mail@v3
+      uses: dawidd6/action-send-mail@v2
       with:
         server_address: smtp.gmail.com
         server_port: 465
